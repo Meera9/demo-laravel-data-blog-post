@@ -4,7 +4,6 @@ namespace App\Data;
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Optional;
 use Spatie\LaravelData\Attributes\WithTransformer;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Transformers\DateTimeInterfaceTransformer;

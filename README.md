@@ -69,6 +69,50 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 You can find the full documentation on the [Spatie website](https://spatie.be/docs/laravel-data/v4/introduction).
 
+## Installation
+
+**Install the package using Composer:**
+
+```bash
+composer require spatie/laravel-data
+```
+
+```php
+use Spatie\LaravelData\Data;
+
+class CategoryData extends Data
+{
+    public function __construct(
+        public ?int $id,
+
+        public string $title,
+
+        public string|null $is_active,
+
+        /** @var Collection<int, BlogData>|null */
+        public ?Collection $blogs,
+
+        #[WithTransformer(DateTimeInterfaceTransformer::class, format: 'Y-m-d H:i:s')]
+        public ?Carbon $updated_at
+    )
+    {
+    }
+}
+```
+
+```php
+public function store(CategoryData $request)
+{
+    Category::query()->create(Arr::only($request->all(), ['id', 'title', 'is_active']));
+
+    $request->is_active = $request->is_active == true ? 1 : 0;
+
+    Session::flash('success', 'Category created successfully');
+
+    return redirect()->route('admin.categories.index');
+}
+```
+
 ## Code of Conduct
 
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
@@ -81,12 +125,8 @@ If you discover a security vulnerability within Laravel Spatie/Laravel-data Demo
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-If you discover a security vulnerability within Spatie Laravel Data Demo above Repo, please send an e-mail to security@spatie.be. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Spatie Laravel Data Demo above Repo, please send an e-mail to [Mail Me](mailto:meghathanki2020@gmail.com) . All security vulnerabilities will be promptly addressed.
 
-## Installation
 
-You can install the package via Composer:
 
-```bash
-composer require spatie/laravel-data.
 
