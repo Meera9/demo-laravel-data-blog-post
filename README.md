@@ -1,7 +1,7 @@
 # Spatie Laravel Data
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-data.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-data)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-data/Tests?label=tests)]([https://github.com/spatie/laravel-data/actions?query=workflow%3ATests+branch%3Amaster](https://github.com/spatie/laravel-data/issues/681))
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-data/Tests?label=tests)](https://github.com/spatie/laravel-data/issues/681)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-data.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-data)
 
 ## Introduction
